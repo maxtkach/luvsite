@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Karolina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap" rel="stylesheet">
+
+    <style>
+    @font-face {
+        font-family: "Kontrabanda";
+            src:
+            url("./Kontrabanda.ttf") format("ttf"),
+        }
+
+        body {
+            font-family: "Kontrabanda", sans-serif !important;
+            font-weight: 400;
+            font-style: normal;
+            background-color: #ffd7f8;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        h2 {
+            font-family: "Ballet", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            color: #fff;
+            line-height: 65px;
+            margin-top: 30px;
+            margin-bottom: 0px;
+            font-style: normal;
+            font-size: 4rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .button {
+            font-family: "Kontrabanda", sans-serif !important;
+            font-weight: 400;
+            font-style: normal;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            outline: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .yes {
+            background-color: #34d399;
+            color: white;
+        }
+
+        .no {
+            background-color: #f87171;
+            color: white;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .yes:active,
+        .no:active {
+            transform: scale(1);
+        }
+
+        .gifka{
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./video.gif" alt="" class="gifka">
+    <h2>Dear Karolina</h2>
+    <h1>Will you be my Valentine?</h1>
+    <button class="button yes" onclick="handleYes()">Yes</button>
+    <button class="button no" onclick="handleNo()">No</button>
+    
+
+    <script>
+        function handleYes() {
+            // Переход на второй сайт (измените ссылку на свою)
+            window.location.href = "./main.html";
+        }
+
+        function handleNo() {
+            const yesButton = document.querySelector(".yes");
+            const noButton = document.querySelector(".no");
+            const text = document.querySelector("h1");
+
+            // Изменяем стиль кнопок
+            yesButton.style.transform = "scale(1.1)";
+            yesButton.style.fontSize = "2.2rem";
+            noButton.style.transform = "scale(0.9)";
+            noButton.style.fontSize = "1.2rem";
+
+            // Меняем текст на "Are you sure?"
+            text.textContent = "Ну пожалуйста, солнышко";
+
+            // Добавляем милую анимацию
+            text.style.animation = "none"; // Снимаем анимацию с текста
+            setTimeout(() => {
+                text.style.animation = "bounce 1s infinite alternate"; // Добавляем обратно
+            }, 10);
+        }
+    </script>
+</body>
+
+</html>
